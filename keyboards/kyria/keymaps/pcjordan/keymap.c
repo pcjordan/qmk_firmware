@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_DLR, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, RALT(KC_Q),
         KC_TAB, LALT_T(KC_A), RCTL_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), LCTL_T(KC_G), LCTL_T(KC_H), RSFT_T(KC_J), RGUI_T(KC_K), RCTL_T(KC_L), LALT_T(KC_SCLN), RALT(KC_P),
         KC_0, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_NO, KC_NO, KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RALT(KC_Y),
-        LCTL(KC_W), TG(3), LT(3,KC_GRV), LT(1,KC_BSPC), LT(2,KC_ESC), LT(2,KC_ENT), LT(1,KC_SPC), RALT_T(KC_QUOT), TG(1), LCTL(KC_T)
+        RCTL(KC_W), TG(3), LT(3,KC_GRV), LT(1,KC_BSPC), LT(2,KC_ESC), LT(2,KC_ENT), LT(1,KC_SPC), RALT_T(KC_QUOT), TG(1), RCTL(KC_T)
     ),
 /*
  *
@@ -61,9 +61,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_NUMBERS] = LAYOUT(
         KC_0, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_NO,
-        KC_TRNS, KC_NO, KC_NO, KC_PPLS, KC_PMNS, KC_PEQL, KC_NO, KC_4, KC_5, KC_6, KC_NO, KC_NO,
-        KC_TRNS, KC_NO, KC_NO, KC_PAST, KC_PSLS, KC_CIRC, KC_NO, KC_NO, KC_NO, KC_NO, KC_0, KC_1, KC_2, KC_3, KC_NO, KC_NO,
-        KC_F24, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE
+        KC_TRNS, KC_NO, KC_NO, KC_PLUS, KC_MINS, KC_EQL, KC_NO, KC_4, KC_5, KC_6, KC_NO, KC_NO,
+        KC_TRNS, KC_NO, KC_NO, KC_ASTR, KC_SLSH, KC_CIRC, KC_NO, KC_NO, KC_NO, KC_NO, KC_0, KC_1, KC_2, KC_3, KC_NO, KC_NO,
+        KC_F12, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TAB, KC_TRNS, KC_TRNS, KC_MUTE
     ),
 /*
  *
@@ -210,23 +210,23 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 break;
             case _SYMBOLS:
                 if (clockwise) {
-                    tap_code16(G(KC_J));
-                } else {
                     tap_code16(G(KC_K));
+                } else {
+                    tap_code16(G(KC_J));
                 }
                 break;
             case _NUMBERS:
                 if (clockwise) {
-                    tap_code(KC_BRIU);
-                } else {
                     tap_code(KC_BRID);
+                } else {
+                    tap_code(KC_BRIU);
                 }
                 break;
             default:
                 if (clockwise) {
-                    tap_code16(S(C(KC_TAB)));
+                    tap_code16(S(RCTL(KC_TAB)));
                 } else {
-                    tap_code16(C(KC_TAB));
+                    tap_code16(RCTL(KC_TAB));
                 }
                 break;
         }
@@ -249,9 +249,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 break;
             case _NUMBERS:
                 if (clockwise) {
-                    tap_code(KC_VOLU);
-                } else {
                     tap_code(KC_VOLD);
+                } else {
+                    tap_code(KC_VOLU);
                 }
                 break;
             default:
