@@ -27,21 +27,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |    $   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |    Ä   |
+ * |    $   |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  |  ; : |    Ä   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |   Tab  |   A  |   S  |  D   |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |    Ö   |
+ * |   Tab  |   A  |   R  |  S   |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |    Ö   |
  * |        | (Alt)|(Ctrl)| (Gui)|(Shft)|(Hypr)|                              |(Hypr)|(Shft)|(Ctrl)| (Gui)| (Alt)|        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |    0   |   Z  |   X  |   C  |   V  |   B  |      |      |  |      |      |   N  |   M  | ,  < | . >  | /  ? |    Ü   |
+ * |    0   |   Z  |   X  |   C  |   D  |   V  |      |      |  |      |      |   K  |   H  | ,  < | . >  | /  ? |    Ü   |
  * `----------------------+------+------+------| Bksp | Esc  |  | Enter| Space|------+------+------+----------------------'
  *                        |      |toggle| ~  ` |(^Num)|(^Sym)|  |(^Sym)|(^Num)| '  " |toggle|      |
  *                        |      |  Mou |(^Mou)|      |      |  |      |      |(RAlt)|  Num |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
-        KC_DLR, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, RALT(KC_Q),
-        KC_TAB, LALT_T(KC_A), RCTL_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), LCTL_T(KC_G), LCTL_T(KC_H), RSFT_T(KC_J), RGUI_T(KC_K), RCTL_T(KC_L), LALT_T(KC_SCLN), RALT(KC_P),
-        KC_0, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_NO, KC_NO, KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RALT(KC_Y),
+        KC_DLR, KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, RALT(KC_Q),
+        KC_TAB, LALT_T(KC_A), RCTL_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), LCTL_T(KC_G), LCTL_T(KC_M), RSFT_T(KC_N), RGUI_T(KC_E), RCTL_T(KC_I), LALT_T(KC_O), RALT(KC_P),
+        KC_0, KC_Z, KC_X, KC_C, KC_D, KC_V, KC_NO, KC_NO, KC_NO, KC_NO, KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, RALT(KC_Y),
         RCTL(KC_W), TG(3), LT(3,KC_GRV), LT(1,KC_BSPC), LT(2,KC_ESC), LT(2,KC_ENT), LT(1,KC_SPC), RALT_T(KC_QUOT), TG(1), RCTL(KC_T)
     ),
 /*
